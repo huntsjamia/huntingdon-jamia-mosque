@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prayer Timetable</title>
+</head>
+<body>
+  <h1>Prayer Timetable for the Month</h1>
+  <!-- Here you can add the timetable or an image -->
+  <p>This is where you can put the full prayer timetable for the month.</p>
+  <img src="path-to-your-image.jpg" alt="Prayer Timetable" style="width: 100%;">
+</body>
+</html>
