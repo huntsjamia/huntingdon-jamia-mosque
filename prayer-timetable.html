@@ -4,11 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prayer Timetable</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <style>
+    /* Your original styles will remain here */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #34495E;
+      background-color: #ECF0F1;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #34495E;
+      padding: 10px 0;
+      color: #fff;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 85%;
+      margin: auto;
+    }
+
+    header .logo h1 {
+      margin: 0;
+    }
+
+    header nav ul {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 10px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li {
+      margin: 0;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      text-align: center;
+      padding: 20px 0;
+      line-height: 1.2;
+    }
+
+    header nav ul li a:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    .main-content {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #2C3E50;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Prayer Timetable for the Month</h1>
-  <!-- Here you can add the timetable or an image -->
-  
-  <img src="Mosque namaz timetable February 2025.jpg" alt="Prayer Timetable" style="width: 100%;">
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Huntingdon Jamia Mosque</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#donation">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Prayer Timetable for the Month</h1>
+    <img src="Mosque namaz timetable February 2025.jpg" alt="Prayer Timetable">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Jamia Mosque Huntingdon. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
