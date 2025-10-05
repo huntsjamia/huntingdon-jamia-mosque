@@ -148,21 +148,75 @@
             </section>
         </div>
 
-        <!-- Right Column: Prayer Times -->
-        <aside class="content-right">
-            <div class="prayer-times">
-                <h2>Prayer Times</h2>
-                <ul id="prayer-times-list">
-                    <li>Fajr: 6:30 </li>
-                    <li>Dhuhr: 13:45 </li>
-                    <li>Asr: 17:00 </li>
-                    <li>Maghrib: 18:38 </li>
-                    <li>Isha: 20:30 </li>
-                    <li>Jummah: 13:45 </li>
-                    <li>Please note that the masjid is locked outside of given prayer times.</li>
+       <!-- Right Column: Prayer Times -->
+<aside class="content-right">
+  <div class="prayer-times">
+    <h2>Prayer Times</h2>
 
-                    <p><a href="prayer-timetable.html" target="Mosque namaz timetable October 2025.jpg">View the full prayer timetable for the month here</a></p>
+    <!-- We'll populate this list dynamically -->
+    <ul id="prayer-times-list">
+      <li>Loading…</li>
+    </ul>
 
+    <p><a href="prayer-timetable.html" target="Mosque namaz timetable October 2025.jpg">
+      View the full prayer timetable for the month here
+    </a></p>
+  </div>
+</aside>
+
+<script>
+(async () => {
+  const tz = 'Europe/London';
+  const now = new Date();
+  const y = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric' }).format(now);
+  const m = new Intl.DateTimeFormat('en-CA', { timeZone: tz, month: '2-digit' }).format(now);
+  const d = parseInt(new Intl.DateTimeFormat('en-GB', { timeZone: tz, day: '2-digit' }).format(now), 10);
+
+  // If your Jumuah changes seasonally, update this string or make a small CSV for Fridays.
+  const JUMUAH_TIME = '13:15';
+
+  async function getMonthlyCSV(path) {
+    const res = await fetch(path, { cache: 'no-store' });
+    if (!res.ok) throw new Error('Missing CSV: ' + path);
+    return res.text();
+  }
+
+  function parseCSV(text) {
+    const lines = text.trim().split(/\r?\n/);
+    const headers = lines.shift().split(',').map(h => h.trim().toLowerCase());
+    return lines.map(line => {
+      const vals = line.split(',').map(v => v.trim());
+      return Object.fromEntries(headers.map((h, i) => [h, vals[i] ?? '']));
+    });
+  }
+
+  const list = document.getElementById('prayer-times-list');
+
+  try {
+    const csv = await getMonthlyCSV(`data/${y}-${m}.csv`);
+    const rows = parseCSV(csv);
+    const row = rows.find(r => parseInt(r.date, 10) === d);
+    if (!row) throw new Error('No row for today');
+
+    // Build the same list you had, using Jamaat times from CSV
+    const items = [
+      ['Fajr', row.fajr || '—'],
+      ['Dhuhr', row.zuhr || '—'],
+      ['Asr', row.asr || '—'],
+      ['Maghrib', row.maghrib || '—'],
+      ['Isha', row.isha || '—'],
+      ['Jummah', JUMUAH_TIME],
+    ];
+
+    list.innerHTML = items.map(([name, time]) => `<li>${name}: ${time}</li>`).join('')
+      + `<li>Please note that the masjid is locked outside of given prayer times.</li>`;
+
+  } catch (err) {
+    list.innerHTML = `<li>Prayer times unavailable. Please try again later.</li>`;
+    console.error(err);
+  }
+})();
+</script>
 
 
                     
