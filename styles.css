@@ -261,7 +261,8 @@ footer {
     /* Shrink Mawlid poster on desktop only */
     #events .event-image {
         width: auto;
-        max-width: 600px;
+        max-width: 400px;
         margin: 20px auto;
     }
 }
+
