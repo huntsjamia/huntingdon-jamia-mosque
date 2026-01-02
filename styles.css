@@ -1,9 +1,15 @@
 /* =====================
    RESET & BASE
 ===================== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -13,25 +19,21 @@ body {
 }
 
 /* =====================
-   TOKENS
+   VARIABLES
 ===================== */
-:root{
-  --bg: #ECF0F1;
-  --surface: #ffffff;
-  --surface-2: #f4f4f9;
-  --text: #34495E;
-  --muted: #5b6b7a;
+:root {
   --nav: #34495E;
   --ink: #2C3E50;
   --accent: #1ABC9C;
   --accent-hover: #16A085;
+  --surface: #ffffff;
+  --surface-soft: #f4f4f9;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
-  --shadow-soft: 0 6px 16px rgba(0,0,0,0.08);
+  --shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 /* =====================
-   LAYOUT
+   GLOBAL LAYOUT
 ===================== */
 .container {
   max-width: 1200px;
@@ -39,67 +41,59 @@ body {
   padding: 0 20px;
 }
 
-.section { padding: 56px 0; }
-.section > .container { padding-top: 0; padding-bottom: 0; }
-
-.section-soft { background: var(--surface-2); }
-
-.muted { color: var(--muted); margin-top: 10px; }
+.section {
+  padding: 48px 0;
+}
 
 /* =====================
    HEADER / NAV
 ===================== */
 .site-header {
   background: var(--nav);
-  color: #fff;
+  color: white;
   position: sticky;
   top: 0;
-  z-index: 10;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  z-index: 100;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   padding: 14px 0;
 }
 
 .logo h1 {
   font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  line-height: 1.2;
 }
 
 .nav-links {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 14px 16px;
+  grid-template-columns: repeat(6, auto);
+  gap: 12px;
   align-items: center;
 }
 
 .nav-links a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 10px;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background 0.2s ease;
 }
 
 .nav-links a:hover {
-  background: rgba(255,255,255,0.10);
-  transform: translateY(-1px);
+  background: rgba(255,255,255,0.12);
 }
 
 .nav-cta {
-  background: rgba(26, 188, 156, 0.20);
-  border: 1px solid rgba(26, 188, 156, 0.45);
-}
-
-.nav-cta:hover {
-  background: rgba(26, 188, 156, 0.30);
+  background: rgba(26,188,156,0.25);
+  border: 1px solid rgba(26,188,156,0.5);
 }
 
 /* =====================
@@ -107,109 +101,58 @@ body {
 ===================== */
 .hero-section {
   background: url('mosque.jpg') center / cover no-repeat;
-  min-height: 86vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   color: white;
 }
 
-.hero-inner { display: flex; justify-content: center; }
-
 .hero-content {
-  width: min(760px, 100%);
+  max-width: 720px;
   background: rgba(44, 62, 80, 0.72);
-  padding: 44px 28px;
+  padding: 36px 28px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   text-align: center;
 }
 
 .hero-content h2 {
-  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   line-height: 1.15;
 }
 
 .hero-content p {
   margin-top: 12px;
-  color: rgba(255,255,255,0.92);
+  opacity: 0.95;
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 11px 18px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.35);
-  color: #fff;
+  padding: 10px 18px;
+  color: white;
   text-decoration: none;
   border-radius: 12px;
-  transition: transform 0.15s ease, background 0.15s ease;
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .btn:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.15);
 }
-
-.btn-solid {
-  background: var(--accent);
-  border: 1px solid transparent;
-}
-
-.btn-solid:hover { background: var(--accent-hover); }
 
 /* =====================
-   TYPOGRAPHY
-===================== */
-h2 {
-  font-size: 2rem;
-  letter-spacing: -0.3px;
-}
-
-h3 {
-  font-size: 1.15rem;
-  margin-bottom: 6px;
-}
-
-p { margin-top: 10px; }
-
-a { color: inherit; }
-a:hover { opacity: 0.95; }
-
-/* =====================
-   MAIN CONTENT GRID
+   MAIN CONTENT
 ===================== */
 .main-content {
-  padding: 56px 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .content-left,
-.content-right { width: 100%; }
-
-@media (min-width: 992px) {
-  .nav-links { grid-template-columns: repeat(6, auto); }
-  .main-content {
-    display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    gap: 28px;
-    align-items: start;
-  }
+.content-right {
+  width: 100%;
 }
-
-/* =====================
-   CARDS
-===================== */
-.card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  padding: 18px;
-}
-
-.event-card { padding: 12px; margin-top: 14px; }
 
 /* =====================
    SERVICES
@@ -218,127 +161,70 @@ a:hover { opacity: 0.95; }
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .service-item {
   background: var(--surface);
-  border-radius: var(--radius);
   padding: 18px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: transform 0.15s ease;
-}
-
-.service-item:hover { transform: translateY(-2px); }
-
-@media (min-width: 992px) {
-  .services-grid { flex-direction: row; flex-wrap: wrap; }
-  .service-item { width: calc(50% - 9px); }
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 /* =====================
-   EVENTS IMAGE
+   EVENTS
 ===================== */
 .event-image {
   width: 100%;
-  max-width: 100%;
   height: auto;
-  display: block;
-  border-radius: calc(var(--radius) - 4px);
-}
-
-@media (min-width: 992px) {
-  /* Shrink Mawlid poster on desktop only */
-  #events .event-image {
-    width: auto;
-    max-width: 400px;
-    margin: 10px auto 0;
-  }
+  border-radius: var(--radius);
+  margin-top: 16px;
+  box-shadow: var(--shadow);
 }
 
 /* =====================
    PRAYER TIMES
 ===================== */
 .content-right {
-  background: linear-gradient(180deg, rgba(189,195,199,0.75), rgba(189,195,199,0.55));
-  border-radius: var(--radius);
+  background: #BDC3C7;
   padding: 18px;
-  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius);
 }
-
-.prayer-times h2 { margin-bottom: 12px; }
 
 #prayer-times-list {
   list-style: none;
+  margin-top: 12px;
   display: grid;
   gap: 10px;
-  margin-top: 10px;
 }
 
 #prayer-times-list li {
-  background: rgba(255,255,255,0.70);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 12px;
+  background: rgba(255,255,255,0.8);
   padding: 10px 12px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-}
-
-#prayer-times-list li strong { font-weight: 700; }
-#prayer-times-list li span { color: var(--ink); font-weight: 600; }
-
-#prayer-times-list li.note {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
 }
 
 /* =====================
-   QURAN SESSIONS
+   QURAN / DONATION / CONTACT
 ===================== */
-.checklist {
-  list-style: none;
-  margin-top: 14px;
-  display: grid;
-  gap: 8px;
-  max-width: 720px;
-}
-
-.checklist li { padding-left: 2px; }
-
-/* =====================
-   DONATION
-===================== */
-#donation { background: var(--surface-2); }
-
-.donation-inner { text-align: center; }
-
-.square-donation-box {
-  display: flex;
-  justify-content: center;
-  margin-top: 18px;
+.section-soft {
+  background: var(--surface-soft);
 }
 
 .square-donate-button {
   background: var(--accent);
   color: white;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .square-donate-button:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
 }
 
-/* =====================
-   CONTACT + FORM
-===================== */
 .contact-section {
   background: var(--ink);
   color: white;
@@ -348,44 +234,10 @@ a:hover { opacity: 0.95; }
 .contact-info {
   list-style: none;
   margin-top: 16px;
-  display: grid;
-  gap: 8px;
 }
 
-.contact-info a { color: #fff; text-decoration: underline; }
-
-.contact-form { background: var(--nav); color: #fff; }
-
-.form-card {
-  margin: 18px auto 0;
-  max-width: 640px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: var(--radius);
-  padding: 18px;
-  text-align: left;
-}
-
-.form-card label {
-  display: block;
-  margin-top: 12px;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.form-card input,
-.form-card textarea {
-  width: 100%;
-  padding: 12px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.15);
-  outline: none;
-}
-
-.form-card input:focus,
-.form-card textarea:focus {
-  border-color: rgba(26,188,156,0.8);
-  box-shadow: 0 0 0 4px rgba(26,188,156,0.18);
+.contact-info li {
+  margin-bottom: 8px;
 }
 
 /* =====================
@@ -395,6 +247,66 @@ a:hover { opacity: 0.95; }
   background: #22303f;
   color: rgba(255,255,255,0.9);
   text-align: center;
-  padding: 18px 0;
+  padding: 16px 0;
 }
 
+/* =====================
+   DESKTOP
+===================== */
+@media (min-width: 992px) {
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+
+  .services-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .service-item {
+    width: calc(50% - 9px);
+  }
+
+  /* Shrink Mawlid poster on desktop */
+  #events .event-image {
+    max-width: 400px;
+    margin: 16px auto 0;
+  }
+}
+
+/* =====================
+   MOBILE HEADER FIX
+===================== */
+@media (max-width: 600px) {
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .nav-links a {
+    text-align: center;
+    padding: 10px 8px;
+  }
+
+  .nav-cta {
+    grid-column: 3;
+    justify-self: end;
+  }
+}
