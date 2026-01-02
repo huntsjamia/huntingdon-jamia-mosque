@@ -1,38 +1,42 @@
-/* General Styles */
+/* =====================
+   RESET & BASE STYLES
+===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.main-content {
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #34495E;
+    background-color: #ECF0F1;
+}
+
+/* =====================
+   GLOBAL CONTAINERS
+===================== */
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-@media (min-width: 992px) {
-    .main-content {
-        display: grid;
-        grid-template-columns: 2.5fr 1fr;
-        gap: 30px;
-    }
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #34495E; /* Primary Text Color: Charcoal */
-    background-color: #ECF0F1; /* Background Color: Cloud White */
+.section {
+    padding: 40px 20px;
 }
 
-.container {
-    width: 85%;
-    margin: auto;
-}
-
-/* Navigation Bar */
+/* =====================
+   HEADER / NAV
+===================== */
 header {
-    background: #34495E; /* Navigation Bar Background: Midnight Blue */
-    padding: 10px 0;
-    color: #fff;
+    background: #34495E;
+    color: white;
 }
 
 header .container {
@@ -41,185 +45,135 @@ header .container {
     align-items: center;
 }
 
-header .logo h1 {
-    margin: 0;
-}
-
 header nav ul {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 10px;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
 }
 
-header nav ul li {
-    margin: 0;
-}
-
-header nav ul li a {
+header nav a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    display: block;
-    text-align: center;
-    padding: 20px 0; /* Increased padding to move the items lower */
-    line-height: 1.2; /* Adjusted line-height for better alignment */
+    padding: 10px 0;
 }
 
-header nav ul li a:hover {
-    border-bottom: 2px solid #fff;
+header nav a:hover {
+    border-bottom: 2px solid white;
 }
 
-/* Hero Section */
+/* =====================
+   HERO SECTION
+===================== */
 .hero-section {
-    background-image: url('mosque.jpg'); /* Replace with a real image */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    background: url('mosque.jpg') center / cover no-repeat;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: white;
 }
 
-.hero-section .hero-content {
-    background: rgba(44, 62, 80, 0.7); /* Semi-transparent Midnight Blue */
+.hero-content {
+    background: rgba(44, 62, 80, 0.7);
     padding: 40px;
     border-radius: 10px;
 }
 
-.hero-section h2 {
+.hero-content h2 {
     font-size: 2.5rem;
 }
 
-.hero-section p {
-    margin: 20px 0;
-}
-
-.hero-section .btn {
+.hero-content .btn {
+    display: inline-block;
+    margin-top: 20px;
     padding: 10px 20px;
-    background: #1ABC9C; /* Button/Accent Color: Turquoise */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    background: #1ABC9C;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
+    border-radius: 5px;
 }
 
-.hero-section .btn:hover {
-    background: #16A085; /* Hover Color: Darker Turquoise */
+.hero-content .btn:hover {
+    background: #16A085;
 }
 
-/* Main Content Layout */
+/* =====================
+   MAIN CONTENT (MOBILE)
+===================== */
 .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
     display: flex;
-    justify-content: space-between;
-    padding: 40px; /* Added padding around the main content */
+    flex-direction: column;
+    gap: 30px;
 }
 
-/* Left Column */
-.content-left {
-    width: 65%;
-    padding: 0 20px; /* Add horizontal padding to ensure spacing from edges */
-}
-
-/* Right Column: Prayer Times */
+.content-left,
 .content-right {
-    width: 30%;
-    background: #BDC3C7; /* Secondary Background: Soft Gray */
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
 }
 
-.prayer-times h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.prayer-times ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.prayer-times ul li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-/* Services Section */
+/* =====================
+   SERVICES
+===================== */
 .services-grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .service-item {
-    width: 48%;
-    background: #fff;
+    background: white;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.service-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.service-item p {
-    font-size: 1rem;
-}
-
-/* Events Section */
-#events {
-    margin-top: 40px;
-}
-
+/* =====================
+   EVENTS IMAGE
+===================== */
 .event-image {
-    max-width: 100%; /* Ensure the image fits the container */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 20px; /* Add some space above the image */
-    border-radius: 10px; /* Slight rounding of corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Contact Section */
+/* =====================
+   PRAYER TIMES
+===================== */
+.content-right {
+    background: #BDC3C7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.prayer-times ul {
+    list-style: none;
+}
+
+.prayer-times li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* =====================
+   CONTACT & FORM
+===================== */
 .contact-section {
-    background: #2C3E50; /* Contact Section Background: Midnight Blue */
-    color: #fff;
-    padding: 50px 20px; /* Added padding for better spacing */
+    background: #2C3E50;
+    color: white;
     text-align: center;
 }
 
-.contact-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.contact-info {
-    list-style: none;
-    font-size: 1.2rem;
-    padding: 0;
-}
-
-.contact-info li {
-    margin-bottom: 10px;
-}
-
-/* Contact Form Section */
 #contact-form {
-    background: #34495E; /* Contact Form Background: Charcoal */
-    padding: 50px 20px; /* Padding around the form section */
-}
-
-#contact-form h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    background: #34495E;
 }
 
 #contact-form form {
@@ -227,119 +181,85 @@ header nav ul li a:hover {
     margin: 0 auto;
 }
 
-#contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#contact-form input, #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: none;
 }
 
 #contact-form button {
-    background: #1ABC9C; /* Button/Accent Color: Turquoise */
-    color: #fff;
+    background: #1ABC9C;
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 #contact-form button:hover {
-    background: #16A085; /* Hover Color: Darker Turquoise */
+    background: #16A085;
 }
 
-/* Donation Button Section */
-#donation {
-    padding: 40px 20px;
-    background: #ECF0F1; /* Background Color: Cloud White */
-    text-align: center;
-}
-
-#donation h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#donation p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
+/* =====================
+   DONATION
+===================== */
 .square-donation-box {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .square-donate-button {
-    display: inline-block;
-    font-size: 18px;
-    line-height: 48px;
-    height: 48px;
-    color: #ffffff;
-    min-width: 212px;
-    background-color: #1ABC9C; /* Button/Accent Color: Turquoise */
-    text-align: center;
-    text-decoration: none;
+    background: #1ABC9C;
+    color: white;
+    padding: 12px 24px;
     border-radius: 6px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+    text-decoration: none;
 }
 
 .square-donate-button:hover {
-    background-color: #16A085; /* Hover Color: Darker Turquoise */
+    background: #16A085;
 }
 
-/* Footer */
+/* =====================
+   FOOTER
+===================== */
 footer {
-    background: #2C3E50; /* Footer Background: Midnight Blue */
+    background: #2C3E50;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
+/* =====================
+   DESKTOP OVERRIDES
+===================== */
+@media (min-width: 992px) {
+
+    header nav ul {
+        grid-template-columns: repeat(6, auto);
     }
 
-    .content-left, .content-right {
-        width: 100%;
-        padding: 0 10px; /* Reduced padding for smaller screens */
+    .main-content {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        align-items: start;
     }
 
     .services-grid {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .service-item {
-        width: 100%; /* Ensure items stack on small screens */
+        width: 48%;
     }
 
-    header nav ul {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
-    }
-
-    header nav ul li a {
-        font-size: 18px;
-        padding: 10px 0;
+    .event-image {
+        max-width: 700px;
+        margin: 20px auto;
     }
 }
-
-/* Smooth scrolling using CSS */
-html {
-    scroll-behavior: smooth;
-}
-
