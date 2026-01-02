@@ -1,5 +1,5 @@
 /* =====================
-   RESET & BASE STYLES
+   RESET & BASE
 ===================== */
 * {
     margin: 0;
@@ -19,7 +19,7 @@ body {
 }
 
 /* =====================
-   GLOBAL CONTAINERS
+   GLOBAL HELPERS
 ===================== */
 .container {
     max-width: 1200px;
@@ -63,14 +63,14 @@ header nav a:hover {
 }
 
 /* =====================
-   HERO SECTION
+   HERO
 ===================== */
 .hero-section {
     background: url('mosque.jpg') center / cover no-repeat;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
 }
@@ -100,7 +100,7 @@ header nav a:hover {
 }
 
 /* =====================
-   MAIN CONTENT (MOBILE)
+   MAIN CONTENT (MOBILE FIRST)
 ===================== */
 .main-content {
     max-width: 1200px;
@@ -258,8 +258,10 @@ footer {
         width: 48%;
     }
 
-    .event-image {
-        max-width: 700px;
+    /* Shrink Mawlid poster on desktop only */
+    #events .event-image {
+        width: auto;
+        max-width: 600px;
         margin: 20px auto;
     }
 }
