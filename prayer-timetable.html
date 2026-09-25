@@ -1,114 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="/mosqueicon2026.png?v=1">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prayer Timetable</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11565915265"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11565915265');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Monthly prayer timetable for Jamia Mosque Huntingdon." />
+
+  <title>Prayer Timetable | Jamia Mosque Huntingdon</title>
+
+  <link rel="icon" type="image/png" href="/mosqueicon2026.png?v=1" />
+
+  <!-- Match main page fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
-  <style>
-    /* Your original styles will remain here */
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #34495E;
-      background-color: #ECF0F1;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #34495E;
-      padding: 10px 0;
-      color: #fff;
-    }
-
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 85%;
-      margin: auto;
-    }
-
-    header .logo h1 {
-      margin: 0;
-    }
-
-    header nav ul {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      gap: 10px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    header nav ul li {
-      margin: 0;
-    }
-
-    header nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      display: block;
-      text-align: center;
-      padding: 20px 0;
-      line-height: 1.2;
-    }
-
-    header nav ul li a:hover {
-      border-bottom: 2px solid #fff;
-    }
-
-    .main-content {
-      padding: 40px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background: #2C3E50;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-    }
-  </style>
 </head>
+
 <body>
 
-  <!-- Navigation Bar -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <h1><a href="index.html" style="color: white; text-decoration: none;">Huntingdon Jamia Mosque</a></h1>
-      </div>
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===================== HEADER / NAV ================================ -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo" aria-label="Jamia Mosque Huntingdon – home">
+        <span class="logo-icon" aria-hidden="true">🕌</span>
+        <span class="logo-text">Huntingdon Jamia Mosque</span>
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button
+        class="nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="nav-cta" href="index.html#donation">Donate</a></li>
+        </ul>
+      </nav>
+
     </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <h1>Salah Timings for the Month</h1>
-    <img src="septembertmtbl.jpg" alt="Prayer Timetable">
+  <!-- ===================== MAIN CONTENT ================================ -->
+  <main id="main-content" class="section">
+    <div class="container" style="text-align: center;">
 
-  </div>
+      <h1>Prayer Timetable</h1>
+      <p class="muted">Salah timings for the current month at Jamia Mosque Huntingdon.</p>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Jamia Mosque Huntingdon. All rights reserved.</p>
+      <figure style="margin: 2rem auto; max-width: 800px;">
+        <img
+          src="septembertmtbl.jpg"
+          alt="Monthly prayer timetable for Jamia Mosque Huntingdon showing Fajr, Dhuhr, Asr, Maghrib and Isha times"
+          style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          loading="lazy"
+        />
+        <figcaption class="muted" style="margin-top: 0.75rem; font-size: 0.9rem;">
+          Please check back each month for updated timings.
+        </figcaption>
+      </figure>
+
+      <a href="index.html" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">
+        ← Back to Home
+      </a>
+
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ==================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <p class="footer-copy">&copy; 2026 Jamia Mosque Huntingdon. All rights reserved.</p>
+
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#donation">Donate</a></li>
+        </ul>
+      </nav>
+
+    </div>
   </footer>
+
+  <!-- Mobile nav toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav    = document.getElementById('primary-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!isOpen));
+          nav.classList.toggle('nav-open', !isOpen);
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('nav-open');
+          });
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
