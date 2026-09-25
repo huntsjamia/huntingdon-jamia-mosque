@@ -12,23 +12,16 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Monthly prayer timetable for Jamia Mosque Huntingdon." />
 
-  <!-- SEO -->
-  <title>Jamia Mosque Huntingdon | Worship, Community & Prayer Times</title>
-  <meta name="description" content="Jamia Mosque Huntingdon – a welcoming place of worship and community service in Huntingdon, UK. View prayer times, events, and online Quran sessions." />
+  <title>Prayer Timetable | Jamia Mosque Huntingdon</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Jamia Mosque Huntingdon" />
-  <meta property="og:description" content="A peaceful place of worship and community service in Huntingdon, UK." />
-  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="/mosqueicon2026.png?v=1" />
 
-  <!-- Google Fonts -->
+  <!-- Match main page fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Stripe Buy Button -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
@@ -36,16 +29,18 @@
 
 <body>
 
-  <!-- Skip link (accessibility) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <!-- ===================== HEADER / NAV ================================ -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
 
-      <a href="#home" class="logo" aria-label="Jamia Mosque Huntingdon – home">
-        <span class="logo-icon" aria-hidden="true">🕌</span>
-        <span class="logo-text">Huntingdon Jamia Mosque</span>
+      <!-- Logo as home button -->
+      <a href="index.html" class="logo" aria-label="Jamia Mosque Huntingdon – home">
+        <img
+          src="mosquelogo.png"
+          alt="Jamia Mosque Huntingdon logo"
+          class="logo-img"
+          height="50"
+        />
       </a>
 
       <!-- Hamburger button for mobile -->
@@ -62,233 +57,43 @@
 
       <nav id="primary-nav" aria-label="Primary navigation">
         <ul class="nav-links" role="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a class="nav-cta" href="#donation">Donate</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="nav-cta" href="index.html#donation">Donate</a></li>
         </ul>
       </nav>
 
     </div>
   </header>
 
-  <!-- ===================== HERO ======================================== -->
-  <section id="home" class="hero-section" role="region" aria-labelledby="hero-heading">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <h1 id="hero-heading">Welcome to Jamia Mosque Huntingdon</h1>
-        <p class="hero-subtitle">A peaceful place of worship and community service</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get in Touch</a>
-          <a href="#donation" class="btn btn-outline">Donate</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== MAIN CONTENT ================================ -->
-  <main id="main-content" class="main-content container">
+  <main class="section">
+    <div class="container" style="text-align: center;">
 
-    <!-- Left column -->
-    <div class="content-left">
+      <h1>Prayer Timetable</h1>
+      <p class="muted">Salah timings for the current month at Jamia Mosque Huntingdon.</p>
 
-      <!-- About -->
-      <section id="about" class="section" aria-labelledby="about-heading">
-        <h2 id="about-heading">About Us</h2>
-        <p>
-          Jamia Mosque Huntingdon has been serving the local Muslim community for over 20 years.
-          We provide a welcoming space for prayer, spiritual learning, and community engagement —
-          open to all who wish to visit.
-        </p>
-      </section>
+      <figure style="margin: 2rem auto; max-width: 800px;">
+        <img
+          src="septembertmtbl.jpg"
+          alt="Monthly prayer timetable for Jamia Mosque Huntingdon showing Fajr, Dhuhr, Asr, Maghrib and Isha times"
+          style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          loading="lazy"
+        />
+        <figcaption class="muted" style="margin-top: 0.75rem; font-size: 0.9rem;">
+          Please check back each month for updated timings.
+        </figcaption>
+      </figure>
 
-      <!-- Services -->
-      <section id="services" class="section" aria-labelledby="services-heading">
-        <h2 id="services-heading">Our Services</h2>
-        <div class="services-grid" role="list">
-
-          <div class="service-item" role="listitem">
-            <span class="service-icon" aria-hidden="true">🕋</span>
-            <h3>Daily Prayers</h3>
-            <p>Join us for the five daily prayers in congregation.</p>
-          </div>
-
-          <div class="service-item" role="listitem">
-            <span class="service-icon" aria-hidden="true">📖</span>
-            <h3>Friday Jumu'ah</h3>
-            <p>Weekly Jumu'ah Khutba and prayers every Friday.</p>
-          </div>
-
-          <div class="service-item" role="listitem">
-            <span class="service-icon" aria-hidden="true">🎓</span>
-            <h3>Qur'an Classes</h3>
-            <p>Children's education classes with experienced teachers.</p>
-          </div>
-
-          <div class="service-item" role="listitem">
-            <span class="service-icon" aria-hidden="true">🌙</span>
-            <h3>Mehfil Services</h3>
-            <p>Community events commemorating key Islamic dates.</p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Events -->
-      <section id="events" class="section" aria-labelledby="events-heading">
-        <h2 id="events-heading">Upcoming Events</h2>
-        <p>Stay tuned for special Islamic lectures, charity events, and community gatherings.</p>
-      </section>
+      <a href="index.html" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">
+        ← Back to Home
+      </a>
 
     </div>
-
-    <!-- Right column: Prayer times -->
-    <aside class="content-right" aria-labelledby="prayer-times-heading">
-      <div class="prayer-times">
-        <h2 id="prayer-times-heading">Today's Prayer Times</h2>
-
-        <ul id="prayer-times-list" aria-live="polite" aria-label="Prayer times for today">
-          <li>Loading…</li>
-        </ul>
-
-        <p class="muted">
-          <a href="prayer-timetable.html" target="_blank" rel="noopener noreferrer">
-            View the full monthly prayer timetable ↗
-          </a>
-        </p>
-      </div>
-    </aside>
-
   </main>
-
-  <!-- ===================== ONLINE QURAN SESSIONS ====================== -->
-  <section id="quran-sessions" class="section section-soft" aria-labelledby="quran-heading">
-    <div class="container">
-      <h2 id="quran-heading">Online Qur'an Sessions</h2>
-      <p>
-        We now offer live online Qur'an sessions for children and adults.
-        Learn to read and understand the Qur'an from home with experienced teachers.
-      </p>
-
-      <ul class="checklist" aria-label="What's included">
-        <li>Flexible timings for all age groups</li>
-        <li>One-to-one or group sessions available</li>
-        <li>Lessons via Zoom or Google Meet</li>
-      </ul>
-
-      <p class="muted">
-        Interested? <a href="#contact-form">Fill out the enquiry form</a> and mention
-        <strong>"Online Qur'an Sessions"</strong> in your message.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===================== DONATION ================================== -->
-  <section id="donation" class="section section-accent" aria-labelledby="donation-heading">
-    <div class="container donation-inner">
-      <h2 id="donation-heading">Support the Mosque</h2>
-      <p>
-        Your generous contributions help us maintain the mosque, run community programmes,
-        and support those in need. May Allah reward you.
-      </p>
-
-      <div class="donation-actions">
-        <stripe-buy-button
-          buy-button-id="buy_btn_1UJcqcFCMmL95xMhiiSQcdja"
-          publishable-key="pk_live_51RqeStFCMmL95xMhGcgA6qISlBb2ijFZ1L5jPt00rZNjMnCU93Y3GcTFvfPohr6wSxL7daSgc4JRZNdcrTmxBpw700JiZvUAfd"
-        >
-        </stripe-buy-button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CONTACT INFO ============================== -->
-  <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
-    <div class="container">
-      <h2 id="contact-heading">Contact Us</h2>
-      <p>We'd love to hear from you. Reach us through any of the channels below.</p>
-
-      <address class="contact-info">
-        <ul role="list">
-          <li>
-            <span aria-hidden="true">✉️</span>
-            <a href="mailto:huntingdonjamiamosque@gmail.com">huntingdonjamiamosque@gmail.com</a>
-          </li>
-          <li>
-            <span aria-hidden="true">📞</span>
-            <a href="tel:+447806855737">07806 855737</a>
-          </li>
-          <li>
-            <span aria-hidden="true">📍</span>
-            <a
-              href="https://maps.google.com/?q=31+Coneygear+Road,+Huntingdon,+PE29+1QN"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              31 Coneygear Road, Huntingdon, PE29 1QN, UK ↗
-            </a>
-          </li>
-        </ul>
-      </address>
-    </div>
-  </section>
-
-  <!-- ===================== CONTACT FORM ============================== -->
-  <section id="contact-form" class="section" aria-labelledby="enquiry-heading">
-    <div class="container">
-      <h2 id="enquiry-heading">Send Us an Enquiry</h2>
-      <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-
-      <form
-        action="https://formspree.io/f/mdknvzll"
-        method="post"
-        class="form-card"
-        novalidate
-        aria-label="Enquiry form"
-      >
-        <div class="form-group">
-          <label for="name">Your Name <span aria-hidden="true" class="required-mark">*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            autocomplete="name"
-            placeholder="e.g. Ahmed Khan"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Your Email <span aria-hidden="true" class="required-mark">*</span></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            autocomplete="email"
-            placeholder="you@example.com"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Your Message <span aria-hidden="true" class="required-mark">*</span></label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            rows="5"
-            placeholder="Type your message here…"
-          ></textarea>
-        </div>
-
-        <p class="form-hint"><span aria-hidden="true">*</span> Required fields</p>
-
-        <button type="submit" class="btn btn-solid">Send Message</button>
-      </form>
-    </div>
-  </section>
 
   <!-- ===================== FOOTER ==================================== -->
   <footer class="site-footer" role="contentinfo">
@@ -298,74 +103,16 @@
 
       <nav aria-label="Footer navigation">
         <ul class="footer-links" role="list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#donation">Donate</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#donation">Donate</a></li>
         </ul>
       </nav>
 
     </div>
   </footer>
-
-  <!-- ===================== SCRIPTS =================================== -->
-
-  <!-- Prayer times -->
-  <script>
-    (async () => {
-      const tz = 'Europe/London';
-      const now = new Date();
-      const y = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric' }).format(now);
-      const m = new Intl.DateTimeFormat('en-CA', { timeZone: tz, month: '2-digit' }).format(now);
-      const d = parseInt(new Intl.DateTimeFormat('en-GB', { timeZone: tz, day: '2-digit' }).format(now), 10);
-
-      const JUMUAH_TIME = '13:45';
-
-      async function getMonthlyCSV(path) {
-        const res = await fetch(path, { cache: 'no-store' });
-        if (!res.ok) throw new Error('Missing CSV: ' + path);
-        return res.text();
-      }
-
-      function parseCSV(text) {
-        const lines = text.trim().split(/\r?\n/);
-        const headers = lines.shift().split(',').map(h => h.trim().toLowerCase());
-        return lines.map(line => {
-          const vals = line.split(',').map(v => v.trim());
-          return Object.fromEntries(headers.map((h, i) => [h, vals[i] ?? '']));
-        });
-      }
-
-      const list = document.getElementById('prayer-times-list');
-
-      try {
-        const csv = await getMonthlyCSV(`data/${y}-${m}.csv`);
-        const rows = parseCSV(csv);
-        const row = rows.find(r => parseInt(r.date, 10) === d);
-        if (!row) throw new Error('No row for today');
-
-        const items = [
-          ['Fajr',     row.fajr    || '—'],
-          ['Dhuhr',    row.zuhr    || '—'],
-          ['Asr',      row.asr     || '—'],
-          ['Maghrib',  row.maghrib || '—'],
-          ['Isha',     row.isha    || '—'],
-          ["Jumu'ah",  JUMUAH_TIME],
-        ];
-
-        list.innerHTML =
-          items.map(([name, time]) =>
-            `<li><strong>${name}</strong><span>${time}</span></li>`
-          ).join('') +
-          `<li class="note">The masjid is locked outside of prayer times.</li>`;
-
-      } catch (err) {
-        list.innerHTML = `<li>Prayer times unavailable — please try again later.</li>`;
-        console.error('[Prayer Times]', err);
-      }
-    })();
-  </script>
 
   <!-- Mobile nav toggle -->
   <script>
@@ -380,7 +127,6 @@
           nav.classList.toggle('nav-open', !isOpen);
         });
 
-        // Close nav when a link is clicked
         nav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             toggle.setAttribute('aria-expanded', 'false');
