@@ -13,19 +13,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO improvements: descriptive title + meta description -->
+  <!-- SEO -->
   <title>Jamia Mosque Huntingdon | Worship, Community & Prayer Times</title>
   <meta name="description" content="Jamia Mosque Huntingdon – a welcoming place of worship and community service in Huntingdon, UK. View prayer times, events, and online Quran sessions." />
 
-  <!-- Open Graph tags for better link previews (e.g. WhatsApp, social) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Jamia Mosque Huntingdon" />
   <meta property="og:description" content="A peaceful place of worship and community service in Huntingdon, UK." />
   <meta property="og:type" content="website" />
 
-  <!-- Preconnect to Google Fonts for performance, then load the font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stripe Buy Button -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
@@ -33,23 +36,19 @@
 
 <body>
 
-  <!-- ===================== SKIP LINK (accessibility) =====================
-       Allows keyboard/screen-reader users to jump past the nav directly
-       to the main content. Should be the very first focusable element.
-  ===================================================================== -->
+  <!-- Skip link (accessibility) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ===================== HEADER / NAV ================================ -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
 
-      <!-- Using <a> around the logo so it acts as a "home" link — standard pattern -->
       <a href="#home" class="logo" aria-label="Jamia Mosque Huntingdon – home">
         <span class="logo-icon" aria-hidden="true">🕌</span>
         <span class="logo-text">Huntingdon Jamia Mosque</span>
       </a>
 
-      <!-- Hamburger button for mobile (hidden on desktop via CSS) -->
+      <!-- Hamburger button for mobile -->
       <button
         class="nav-toggle"
         aria-controls="primary-nav"
@@ -68,7 +67,6 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#contact">Contact</a></li>
-          <!-- Donate stands out as a CTA button -->
           <li><a class="nav-cta" href="#donation">Donate</a></li>
         </ul>
       </nav>
@@ -77,12 +75,9 @@
   </header>
 
   <!-- ===================== HERO ======================================== -->
-  <!-- role="region" + aria-labelledby ties the section to its heading for
-       screen readers. Use this pattern on every landmark section.        -->
   <section id="home" class="hero-section" role="region" aria-labelledby="hero-heading">
     <div class="container hero-inner">
       <div class="hero-content">
-        <!-- h1 belongs here — there should be exactly ONE h1 per page -->
         <h1 id="hero-heading">Welcome to Jamia Mosque Huntingdon</h1>
         <p class="hero-subtitle">A peaceful place of worship and community service</p>
         <div class="hero-actions">
@@ -94,10 +89,9 @@
   </section>
 
   <!-- ===================== MAIN CONTENT ================================ -->
-  <!-- id="main-content" is the skip-link target -->
   <main id="main-content" class="main-content container">
 
-    <!-- Left column: About, Services, Events -->
+    <!-- Left column -->
     <div class="content-left">
 
       <!-- About -->
@@ -116,7 +110,6 @@
         <div class="services-grid" role="list">
 
           <div class="service-item" role="listitem">
-            <!-- Decorative icons improve scannability; aria-hidden keeps them silent to screen readers -->
             <span class="service-icon" aria-hidden="true">🕋</span>
             <h3>Daily Prayers</h3>
             <p>Join us for the five daily prayers in congregation.</p>
@@ -144,10 +137,11 @@
       </section>
 
       <!-- Events -->
-<section id="events" class="section" aria-labelledby="events-heading">
-  <h2 id="events-heading">Upcoming Events</h2>
-  <p>Stay tuned for special Islamic lectures, charity events, and community gatherings.</p>
-</section>
+      <section id="events" class="section" aria-labelledby="events-heading">
+        <h2 id="events-heading">Upcoming Events</h2>
+        <p>Stay tuned for special Islamic lectures, charity events, and community gatherings.</p>
+      </section>
+
     </div>
 
     <!-- Right column: Prayer times -->
@@ -155,7 +149,6 @@
       <div class="prayer-times">
         <h2 id="prayer-times-heading">Today's Prayer Times</h2>
 
-        <!-- aria-live="polite" announces updates to screen readers once the JS loads times -->
         <ul id="prayer-times-list" aria-live="polite" aria-label="Prayer times for today">
           <li>Loading…</li>
         </ul>
@@ -179,7 +172,6 @@
         Learn to read and understand the Qur'an from home with experienced teachers.
       </p>
 
-      <!-- Use a proper <ul> with consistent, readable list items (no emoji in markup) -->
       <ul class="checklist" aria-label="What's included">
         <li>Flexible timings for all age groups</li>
         <li>One-to-one or group sessions available</li>
@@ -202,18 +194,12 @@
         and support those in need. May Allah reward you.
       </p>
 
-      <!-- Wrap in a <div> so we can style/centre it cleanly -->
       <div class="donation-actions">
-        <a
-          class="btn btn-donate square-donate-button"
-          href="https://square.link/u/g4UgEVES?src=sheet"
-          data-url="https://square.link/u/g4UgEVES?src=sheet"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Donate via Square (opens in a new window)"
+        <stripe-buy-button
+          buy-button-id="buy_btn_1UJcqcFCMmL95xMhiiSQcdja"
+          publishable-key="pk_live_51RqeStFCMmL95xMhGcgA6qISlBb2ijFZ1L5jPt00rZNjMnCU93Y3GcTFvfPohr6wSxL7daSgc4JRZNdcrTmxBpw700JiZvUAfd"
         >
-          Donate Now
-        </a>
+        </stripe-buy-button>
       </div>
     </div>
   </section>
@@ -224,7 +210,6 @@
       <h2 id="contact-heading">Contact Us</h2>
       <p>We'd love to hear from you. Reach us through any of the channels below.</p>
 
-      <!-- Use <address> — the semantic element for contact information -->
       <address class="contact-info">
         <ul role="list">
           <li>
@@ -237,7 +222,6 @@
           </li>
           <li>
             <span aria-hidden="true">📍</span>
-            <!-- Linking to Google Maps is a big usability win for mobile users -->
             <a
               href="https://maps.google.com/?q=31+Coneygear+Road,+Huntingdon,+PE29+1QN"
               target="_blank"
@@ -264,9 +248,6 @@
         novalidate
         aria-label="Enquiry form"
       >
-        <!-- novalidate lets you use custom CSS/JS validation styles if needed,
-             while HTML5 'required' still works as a fallback. -->
-
         <div class="form-group">
           <label for="name">Your Name <span aria-hidden="true" class="required-mark">*</span></label>
           <input
@@ -302,7 +283,6 @@
           ></textarea>
         </div>
 
-        <!-- Small hint about required fields -->
         <p class="form-hint"><span aria-hidden="true">*</span> Required fields</p>
 
         <button type="submit" class="btn btn-solid">Send Message</button>
@@ -316,7 +296,6 @@
 
       <p class="footer-copy">&copy; 2026 Jamia Mosque Huntingdon. All rights reserved.</p>
 
-      <!-- Quick footer nav — helpful for users who scroll to the bottom -->
       <nav aria-label="Footer navigation">
         <ul class="footer-links" role="list">
           <li><a href="#about">About</a></li>
@@ -332,7 +311,7 @@
 
   <!-- ===================== SCRIPTS =================================== -->
 
-  <!-- Prayer times (unchanged logic, just tidied) -->
+  <!-- Prayer times -->
   <script>
     (async () => {
       const tz = 'Europe/London';
@@ -367,12 +346,12 @@
         if (!row) throw new Error('No row for today');
 
         const items = [
-          ['Fajr',    row.fajr    || '—'],
-          ['Dhuhr',   row.zuhr    || '—'],
-          ['Asr',     row.asr     || '—'],
-          ['Maghrib', row.maghrib || '—'],
-          ['Isha',    row.isha    || '—'],
-          ['Jumu\'ah', JUMUAH_TIME],
+          ['Fajr',     row.fajr    || '—'],
+          ['Dhuhr',    row.zuhr    || '—'],
+          ['Asr',      row.asr     || '—'],
+          ['Maghrib',  row.maghrib || '—'],
+          ['Isha',     row.isha    || '—'],
+          ["Jumu'ah",  JUMUAH_TIME],
         ];
 
         list.innerHTML =
@@ -401,7 +380,7 @@
           nav.classList.toggle('nav-open', !isOpen);
         });
 
-        // Close nav when a link is clicked (good for single-page anchor links)
+        // Close nav when a link is clicked
         nav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             toggle.setAttribute('aria-expanded', 'false');
@@ -409,37 +388,6 @@
           });
         });
       }
-    });
-  </script>
-
-  <!-- Square donation popup (unchanged logic) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      function showCheckoutWindow(e) {
-        e.preventDefault();
-        const url   = e.currentTarget.getAttribute('data-url');
-        const title = 'Square Payment Links';
-
-        const vw = window.innerWidth  || document.documentElement.clientWidth  || screen.width;
-        const vh = window.innerHeight || document.documentElement.clientHeight || screen.height;
-        const w  = 500;
-        const h  = vh * 0.75;
-
-        const dualLeft = window.screenLeft ?? window.screenX;
-        const dualTop  = window.screenTop  ?? window.screenY;
-        const zoom     = vw / window.screen.availWidth;
-        const left     = (vw - w) / 2 / zoom + dualLeft;
-        const top      = (vh - h) / 2 / zoom + dualTop;
-
-        const popup = window.open(
-          url, title,
-          `scrollbars=yes,width=${w / zoom},height=${h / zoom},top=${top},left=${left}`
-        );
-        popup?.focus();
-      }
-
-      document.querySelector('.square-donate-button')
-        ?.addEventListener('click', showCheckoutWindow);
     });
   </script>
 
