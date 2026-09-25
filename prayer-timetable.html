@@ -18,7 +18,7 @@
 
   <link rel="icon" type="image/png" href="/mosqueicon2026.png?v=1" />
 
-  <!-- Match main page fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,16 +29,18 @@
 
 <body>
 
-  <!-- Skip link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <!-- ===================== HEADER / NAV ================================ -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
 
+      <!-- Logo as home button -->
       <a href="index.html" class="logo" aria-label="Jamia Mosque Huntingdon – home">
-        <span class="logo-icon" aria-hidden="true">🕌</span>
-        <span class="logo-text">Huntingdon Jamia Mosque</span>
+        <img
+          src="mosquelogo.png"
+          alt="Jamia Mosque Huntingdon logo"
+          class="logo-img"
+          height="50"
+        />
       </a>
 
       <!-- Hamburger button for mobile -->
@@ -68,7 +70,7 @@
   </header>
 
   <!-- ===================== MAIN CONTENT ================================ -->
-  <main id="main-content" class="section">
+  <main class="section">
     <div class="container" style="text-align: center;">
 
       <h1>Prayer Timetable</h1>
