@@ -12,191 +12,342 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jamia Mosque Huntingdon</title>
+
+  <!-- SEO improvements: descriptive title + meta description -->
+  <title>Jamia Mosque Huntingdon | Worship, Community & Prayer Times</title>
+  <meta name="description" content="Jamia Mosque Huntingdon – a welcoming place of worship and community service in Huntingdon, UK. View prayer times, events, and online Quran sessions." />
+
+  <!-- Open Graph tags for better link previews (e.g. WhatsApp, social) -->
+  <meta property="og:title" content="Jamia Mosque Huntingdon" />
+  <meta property="og:description" content="A peaceful place of worship and community service in Huntingdon, UK." />
+  <meta property="og:type" content="website" />
+
+  <!-- Preconnect to Google Fonts for performance, then load the font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- Navigation Bar -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <h1>Huntingdon Jamia Mosque</h1>
-      </div>
 
-      <nav aria-label="Primary navigation">
-        <ul class="nav-links">
+  <!-- ===================== SKIP LINK (accessibility) =====================
+       Allows keyboard/screen-reader users to jump past the nav directly
+       to the main content. Should be the very first focusable element.
+  ===================================================================== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===================== HEADER / NAV ================================ -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+
+      <!-- Using <a> around the logo so it acts as a "home" link — standard pattern -->
+      <a href="#home" class="logo" aria-label="Jamia Mosque Huntingdon – home">
+        <span class="logo-icon" aria-hidden="true">🕌</span>
+        <span class="logo-text">Huntingdon Jamia Mosque</span>
+      </a>
+
+      <!-- Hamburger button for mobile (hidden on desktop via CSS) -->
+      <button
+        class="nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-links" role="list">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!-- Donate stands out as a CTA button -->
           <li><a class="nav-cta" href="#donation">Donate</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-section">
+  <!-- ===================== HERO ======================================== -->
+  <!-- role="region" + aria-labelledby ties the section to its heading for
+       screen readers. Use this pattern on every landmark section.        -->
+  <section id="home" class="hero-section" role="region" aria-labelledby="hero-heading">
     <div class="container hero-inner">
       <div class="hero-content">
-        <h2>Welcome to Jamia Mosque Huntingdon</h2>
-        <p>A peaceful place of worship and community service</p>
-        <a href="#contact" class="btn">Get in Touch</a>
+        <!-- h1 belongs here — there should be exactly ONE h1 per page -->
+        <h1 id="hero-heading">Welcome to Jamia Mosque Huntingdon</h1>
+        <p class="hero-subtitle">A peaceful place of worship and community service</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#donation" class="btn btn-outline">Donate</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main class="main-content container">
-    <!-- Left Column -->
+  <!-- ===================== MAIN CONTENT ================================ -->
+  <!-- id="main-content" is the skip-link target -->
+  <main id="main-content" class="main-content container">
+
+    <!-- Left column: About, Services, Events -->
     <div class="content-left">
-      <section id="about" class="section">
-        <h2>About Us</h2>
+
+      <!-- About -->
+      <section id="about" class="section" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Us</h2>
         <p>
-          Jamia Mosque Huntingdon has been serving the local community for over 20 years.
-          We provide a welcoming space for Muslims to practice their faith, engage in spiritual learning,
-          and embrace the Muslim community.
+          Jamia Mosque Huntingdon has been serving the local Muslim community for over 20 years.
+          We provide a welcoming space for prayer, spiritual learning, and community engagement —
+          open to all who wish to visit.
         </p>
       </section>
 
-      <section id="services" class="section">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-          <div class="service-item">
+      <!-- Services -->
+      <section id="services" class="section" aria-labelledby="services-heading">
+        <h2 id="services-heading">Our Services</h2>
+        <div class="services-grid" role="list">
+
+          <div class="service-item" role="listitem">
+            <!-- Decorative icons improve scannability; aria-hidden keeps them silent to screen readers -->
+            <span class="service-icon" aria-hidden="true">🕋</span>
             <h3>Daily Prayers</h3>
             <p>Join us for the five daily prayers in congregation.</p>
           </div>
-          <div class="service-item">
-            <h3>Friday Jummah</h3>
-            <p>Weekly Jummah Khutba and prayers.</p>
+
+          <div class="service-item" role="listitem">
+            <span class="service-icon" aria-hidden="true">📖</span>
+            <h3>Friday Jumu'ah</h3>
+            <p>Weekly Jumu'ah Khutba and prayers every Friday.</p>
           </div>
-          <div class="service-item">
-            <h3>Quran Classes</h3>
-            <p>Children education classes.</p>
+
+          <div class="service-item" role="listitem">
+            <span class="service-icon" aria-hidden="true">🎓</span>
+            <h3>Qur'an Classes</h3>
+            <p>Children's education classes with experienced teachers.</p>
           </div>
-          <div class="service-item">
+
+          <div class="service-item" role="listitem">
+            <span class="service-icon" aria-hidden="true">🌙</span>
             <h3>Mehfil Services</h3>
-            <p>Conducting community events for key Islamic dates.</p>
+            <p>Community events commemorating key Islamic dates.</p>
           </div>
+
         </div>
       </section>
 
-      <section id="events" class="section">
-        <h2>Upcoming Events</h2>
+      <!-- Events -->
+      <section id="events" class="section" aria-labelledby="events-heading">
+        <h2 id="events-heading">Upcoming Events</h2>
         <p>Stay tuned for special Islamic lectures, charity events, and community gatherings.</p>
 
         <div class="card event-card">
-          <img src="mawlid.jpg" alt="Mawlid Event Poster" class="event-image" loading="lazy" />
+          <!-- Always provide meaningful alt text describing what's in the image -->
+          <img
+            src="mawlid.jpg"
+            alt="Poster for the upcoming Mawlid an-Nabi celebration at Huntingdon Jamia Mosque"
+            class="event-image"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <!-- Optional caption — remove if not needed -->
+          <p class="event-caption">Mawlid an-Nabi Celebration — details to be announced</p>
         </div>
       </section>
+
     </div>
 
-    <!-- Right Column -->
-    <aside class="content-right" aria-label="Prayer times">
+    <!-- Right column: Prayer times -->
+    <aside class="content-right" aria-labelledby="prayer-times-heading">
       <div class="prayer-times">
-        <h2>Prayer Times</h2>
-        <ul id="prayer-times-list">
+        <h2 id="prayer-times-heading">Today's Prayer Times</h2>
+
+        <!-- aria-live="polite" announces updates to screen readers once the JS loads times -->
+        <ul id="prayer-times-list" aria-live="polite" aria-label="Prayer times for today">
           <li>Loading…</li>
         </ul>
 
         <p class="muted">
-          <a href="prayer-timetable.html" target="_blank" rel="noopener">
-            View the full prayer timetable for the month here
+          <a href="prayer-timetable.html" target="_blank" rel="noopener noreferrer">
+            View the full monthly prayer timetable ↗
           </a>
         </p>
       </div>
     </aside>
+
   </main>
 
-  <!-- Quran Sessions -->
-  <section id="quran-sessions" class="section section-soft">
+  <!-- ===================== ONLINE QURAN SESSIONS ====================== -->
+  <section id="quran-sessions" class="section section-soft" aria-labelledby="quran-heading">
     <div class="container">
-      <h2>Online Quran Sessions</h2>
+      <h2 id="quran-heading">Online Qur'an Sessions</h2>
       <p>
-        We are now offering live online Quran sessions for both children and adults.
-        Learn to read and understand the Quran from the comfort of your home with experienced teachers.
+        We now offer live online Qur'an sessions for children and adults.
+        Learn to read and understand the Qur'an from home with experienced teachers.
       </p>
 
-      <ul class="checklist">
-        <li>✔️ Flexible timings for all age groups</li>
-        <li>✔️ One-on-one or group options</li>
-        <li>✔️ Lessons via Zoom / Google Meet</li>
+      <!-- Use a proper <ul> with consistent, readable list items (no emoji in markup) -->
+      <ul class="checklist" aria-label="What's included">
+        <li>Flexible timings for all age groups</li>
+        <li>One-to-one or group sessions available</li>
+        <li>Lessons via Zoom or Google Meet</li>
       </ul>
 
       <p class="muted">
-        If you are interested, please <a href="#contact-form">fill out the enquiry form</a> and mention
-        <strong>"Online Quran Sessions"</strong> in your message.
+        Interested? <a href="#contact-form">Fill out the enquiry form</a> and mention
+        <strong>"Online Qur'an Sessions"</strong> in your message.
       </p>
     </div>
   </section>
 
-  <!-- Donation Section -->
-  <section id="donation" class="section">
+  <!-- ===================== DONATION ================================== -->
+  <section id="donation" class="section section-accent" aria-labelledby="donation-heading">
     <div class="container donation-inner">
-      <h2>Support Us</h2>
-      <p>Your contributions help us continue our work and support the mosque.</p>
+      <h2 id="donation-heading">Support the Mosque</h2>
+      <p>
+        Your generous contributions help us maintain the mosque, run community programmes,
+        and support those in need. May Allah reward you.
+      </p>
 
-      <div class="square-donation-box">
+      <!-- Wrap in a <div> so we can style/centre it cleanly -->
+      <div class="donation-actions">
         <a
-          class="square-donate-button"
-          target="_blank"
-          rel="noopener"
+          class="btn btn-donate square-donate-button"
+          href="https://square.link/u/g4UgEVES?src=sheet"
           data-url="https://square.link/u/g4UgEVES?src=sheet"
-  href="https://square.link/u/g4UgEVES?src=sheet"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Donate via Square (opens in a new window)"
         >
-          Donate
+          Donate Now
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
+  <!-- ===================== CONTACT INFO ============================== -->
+  <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
     <div class="container">
-      <h2>Contact Us</h2>
-      <p>Feel free to reach out for any queries or information:</p>
+      <h2 id="contact-heading">Contact Us</h2>
+      <p>We'd love to hear from you. Reach us through any of the channels below.</p>
 
-      <ul class="contact-info">
-        <li>Email: <a href="mailto:huntingdonjamiamosque@gmail.com">huntingdonjamiamosque@gmail.com</a></li>
-        <li>Phone: <a href="tel:+447806855737">07806 855737</a></li>
-        <li>Address: 31 Coneygear Road, Huntingdon, PE29 1QN, UK</li>
-      </ul>
+      <!-- Use <address> — the semantic element for contact information -->
+      <address class="contact-info">
+        <ul role="list">
+          <li>
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:huntingdonjamiamosque@gmail.com">huntingdonjamiamosque@gmail.com</a>
+          </li>
+          <li>
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+447806855737">07806 855737</a>
+          </li>
+          <li>
+            <span aria-hidden="true">📍</span>
+            <!-- Linking to Google Maps is a big usability win for mobile users -->
+            <a
+              href="https://maps.google.com/?q=31+Coneygear+Road,+Huntingdon,+PE29+1QN"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              31 Coneygear Road, Huntingdon, PE29 1QN, UK ↗
+            </a>
+          </li>
+        </ul>
+      </address>
     </div>
   </section>
 
-  <!-- Contact Form Section -->
-  <section id="contact-form" class="section contact-form">
+  <!-- ===================== CONTACT FORM ============================== -->
+  <section id="contact-form" class="section" aria-labelledby="enquiry-heading">
     <div class="container">
-      <h2>Enquiries</h2>
-      <p>Fill out the form below to send us a message.</p>
+      <h2 id="enquiry-heading">Send Us an Enquiry</h2>
+      <p>Fill out the form below and we'll get back to you as soon as possible.</p>
 
-      <form action="https://formspree.io/f/mdknvzll" method="post" class="form-card">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
+      <form
+        action="https://formspree.io/f/mdknvzll"
+        method="post"
+        class="form-card"
+        novalidate
+        aria-label="Enquiry form"
+      >
+        <!-- novalidate lets you use custom CSS/JS validation styles if needed,
+             while HTML5 'required' still works as a fallback. -->
 
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required autocomplete="email" />
+        <div class="form-group">
+          <label for="name">Your Name <span aria-hidden="true" class="required-mark">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="e.g. Ahmed Khan"
+          />
+        </div>
 
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required rows="5"></textarea>
+        <div class="form-group">
+          <label for="email">Your Email <span aria-hidden="true" class="required-mark">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message <span aria-hidden="true" class="required-mark">*</span></label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            placeholder="Type your message here…"
+          ></textarea>
+        </div>
+
+        <!-- Small hint about required fields -->
+        <p class="form-hint"><span aria-hidden="true">*</span> Required fields</p>
 
         <button type="submit" class="btn btn-solid">Send Message</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Jamia Mosque Huntingdon. All rights reserved.</p>
+  <!-- ===================== FOOTER ==================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <p class="footer-copy">&copy; 2026 Jamia Mosque Huntingdon. All rights reserved.</p>
+
+      <!-- Quick footer nav — helpful for users who scroll to the bottom -->
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#donation">Donate</a></li>
+        </ul>
+      </nav>
+
     </div>
   </footer>
 
-  <!-- Prayer Times Script (kept intact, moved to bottom) -->
+  <!-- ===================== SCRIPTS =================================== -->
+
+  <!-- Prayer times (unchanged logic, just tidied) -->
   <script>
     (async () => {
       const tz = 'Europe/London';
@@ -231,57 +382,81 @@
         if (!row) throw new Error('No row for today');
 
         const items = [
-          ['Fajr', row.fajr || '—'],
-          ['Dhuhr', row.zuhr || '—'],
-          ['Asr', row.asr || '—'],
+          ['Fajr',    row.fajr    || '—'],
+          ['Dhuhr',   row.zuhr    || '—'],
+          ['Asr',     row.asr     || '—'],
           ['Maghrib', row.maghrib || '—'],
-          ['Isha', row.isha || '—'],
-          ['Jummah', JUMUAH_TIME],
+          ['Isha',    row.isha    || '—'],
+          ['Jumu\'ah', JUMUAH_TIME],
         ];
 
         list.innerHTML =
-          items.map(([name, time]) => `<li><strong>${name}</strong><span>${time}</span></li>`).join('') +
-          `<li class="note">Please note that the masjid is locked outside of given prayer times.</li>`;
+          items.map(([name, time]) =>
+            `<li><strong>${name}</strong><span>${time}</span></li>`
+          ).join('') +
+          `<li class="note">The masjid is locked outside of prayer times.</li>`;
 
       } catch (err) {
-        list.innerHTML = `<li>Prayer times unavailable. Please try again later.</li>`;
-        console.error(err);
+        list.innerHTML = `<li>Prayer times unavailable — please try again later.</li>`;
+        console.error('[Prayer Times]', err);
       }
     })();
   </script>
 
-  <!-- Square popup (kept intact) -->
+  <!-- Mobile nav toggle -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      function showCheckoutWindow(e) {
-        e.preventDefault();
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav    = document.getElementById('primary-nav');
 
-        const url = e.target.getAttribute('data-url');
-        const title = 'Square Payment Links';
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!isOpen));
+          nav.classList.toggle('nav-open', !isOpen);
+        });
 
-        const width = window.innerWidth || document.documentElement.clientWidth || screen.width;
-        const height = window.innerHeight || document.documentElement.clientHeight || screen.height;
-
-        const w = 500;
-        const h = height * 0.75;
-
-        const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
-        const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
-        const systemZoom = width / window.screen.availWidth;
-        const left = (width - w) / 2 / systemZoom + dualScreenLeft;
-        const top = (height - h) / 2 / systemZoom + dualScreenTop;
-
-        const newWindow = window.open(
-          url,
-          title,
-          `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`
-        );
-        if (window.focus) newWindow.focus();
+        // Close nav when a link is clicked (good for single-page anchor links)
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('nav-open');
+          });
+        });
       }
-
-      const donateBtn = document.querySelector('.square-donate-button');
-      if (donateBtn) donateBtn.addEventListener('click', showCheckoutWindow);
     });
   </script>
+
+  <!-- Square donation popup (unchanged logic) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function showCheckoutWindow(e) {
+        e.preventDefault();
+        const url   = e.currentTarget.getAttribute('data-url');
+        const title = 'Square Payment Links';
+
+        const vw = window.innerWidth  || document.documentElement.clientWidth  || screen.width;
+        const vh = window.innerHeight || document.documentElement.clientHeight || screen.height;
+        const w  = 500;
+        const h  = vh * 0.75;
+
+        const dualLeft = window.screenLeft ?? window.screenX;
+        const dualTop  = window.screenTop  ?? window.screenY;
+        const zoom     = vw / window.screen.availWidth;
+        const left     = (vw - w) / 2 / zoom + dualLeft;
+        const top      = (vh - h) / 2 / zoom + dualTop;
+
+        const popup = window.open(
+          url, title,
+          `scrollbars=yes,width=${w / zoom},height=${h / zoom},top=${top},left=${left}`
+        );
+        popup?.focus();
+      }
+
+      document.querySelector('.square-donate-button')
+        ?.addEventListener('click', showCheckoutWindow);
+    });
+  </script>
+
 </body>
 </html>
