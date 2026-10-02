@@ -323,7 +323,7 @@
       const m = new Intl.DateTimeFormat('en-CA', { timeZone: tz, month: '2-digit' }).format(now);
       const d = parseInt(new Intl.DateTimeFormat('en-GB', { timeZone: tz, day: '2-digit' }).format(now), 10);
 
-      const JUMUAH_TIME = '13:45';
+      
 
       async function getMonthlyCSV(path) {
         const res = await fetch(path, { cache: 'no-store' });
@@ -354,7 +354,7 @@
           ['Asr',      row.asr     || '—'],
           ['Maghrib',  row.maghrib || '—'],
           ['Isha',     row.isha    || '—'],
-          ["Jumu'ah",  JUMUAH_TIME],
+          ["Jumu'ah",  row.zuhr || '—'],
         ];
 
         list.innerHTML =
