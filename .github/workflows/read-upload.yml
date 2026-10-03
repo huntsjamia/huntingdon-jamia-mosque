@@ -1,0 +1,33 @@
+name: Read uploaded timetable
+on:
+  push:
+    branches: [timetable-processing]
+    paths: ['incoming/request.json']
+permissions:
+  contents: write
+concurrency:
+  group: timetable-reader
+  cancel-in-progress: false
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free reader
+        run: python -m pip install rapidocr-onnxruntime==1.4.4 onnxruntime==1.30.0 pillow==12.3.0 pillow-heif==1.8.0 pypdfium2==5.13.0
+      - name: Convert and read original upload
+        run: python process-upload.py
+      - name: Return draft to the uploader
+        run: |
+          git config user.name 'Timetable Reader'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add results/
+          git commit -m 'Return timetable draft for review'
+          git pull --rebase origin timetable-processing
+          git push origin HEAD:timetable-processing
