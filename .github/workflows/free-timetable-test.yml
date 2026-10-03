@@ -1,0 +1,35 @@
+name: Free timetable OCR test
+on:
+  push:
+    branches: [test/free-timetable-ocr]
+    paths: ['timetable-test.py', '.github/workflows/free-timetable-test.yml', 'monthly-timetable.jpg', 'septembertmtbl.jpg']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: free-timetable-test
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free offline OCR and conversion tools
+        run: python -m pip install rapidocr-onnxruntime==1.4.4 onnxruntime==1.30.0 pillow==12.3.0 pillow-heif==1.8.0 pypdfium2==5.13.0
+      - name: Verify September and October against reference CSVs
+        run: |
+          python timetable-test.py septembertmtbl.jpg 2026-09 drafts/september --reference data/2026-09.csv
+          python timetable-test.py monthly-timetable.jpg 2026-10 drafts/october --reference data/2026-10.csv
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reviewed-required-timetable-drafts
+          path: drafts/
+          if-no-files-found: error
+          retention-days: 3
